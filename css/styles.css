@@ -186,12 +186,22 @@ section .filter-card {
 
 .search-button:hover {
   background: #dedede;
-  color: var(--blue);
+  color: var(--black);
 }
 
 .title-wrapper-feminino{
   margin-top: 20px;
   padding-bottom: 10px;
+}
+
+.menssage-error {
+  font-size: large;
+  color: var(--yellow);
+  margin-top: 5%;
+  text-align: center; 
+  font-style: italic;  
+  font-weight: bold;
+  display: none;
 }
 
 section .card-wrapper{

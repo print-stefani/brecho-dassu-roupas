@@ -39,10 +39,13 @@
           <h3>Peças Femininas</h3>
         </div>
         <div class="filter-card">
-          <input type="text" class="search-input" placeholder="Escolha sua peça favorita">
-          <button class="search-button">Buscar</button>
+          <input type="text" class="search-input" placeholder="Escolha sua peça favorita" id="searchInput">
+          <button class="search-button" id="searchButton" onclick="searchButton()">Buscar</button>
         </div>
-        <div class="card-wrapper">
+        <div class="menssage-error" id="MenssageError">
+        <p>Item não encontrado. Por favor, digite novamente.</p>
+        </div>
+        <div class="card-wrapper" id="cardWrapper">
           <div class="card-item">
           <img src="images/casaco.png" alt="Feminino">
             <div class="card-content">
@@ -78,6 +81,6 @@
         </div>
       </div>
     </section>
-    
+    <script src="script.js"></script>
     </body>
     </html>
