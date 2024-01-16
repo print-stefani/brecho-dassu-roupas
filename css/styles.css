@@ -108,10 +108,10 @@ nav ul button:hover{
 }
 
 .header-block img{
-  width: 300px;
+  width: 278px;
+  margin-left: 700px;
   border-radius: 20px;
   position: absolute;
-  right: 1%;
 }
 
 .header-block .text {
