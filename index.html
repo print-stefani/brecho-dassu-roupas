@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brechó Dassu Roupas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
     <header>
@@ -20,12 +22,15 @@
             <li><a href="#Masculino">Masculino</a></li>
             <li><a href="#Infantil">Infantil</a></li>
             <li><a href="#Acessórios">Acessórios</a></li>
-            <button>Login</button>
+            <button class="cart-icon" onclick="exibirCarrinho()">
+              <i class="fas fa-shopping-cart"></i>
+              Carrinho <span class="price" id="carrinhoTotal">R$ 0,00</span>
+            </button>
           </ul>
         </nav>
         <div class="header-block">
           <div class="text">
-            <h2>Descubra o seu charme atemporal!</h2>
+            <h2>Descubra o charme atemporal do seu estilo!</h2>
               <p>Onde cada peça conta uma história única de moda e sustentabilidade.</p>
           </div>
           <img src="images/entrada site.png" alt="Entrada" />
@@ -43,44 +48,21 @@
           <button class="search-button" id="searchButton" onclick="searchButton()">Buscar</button>
         </div>
         <div class="menssage-error" id="MenssageError">
-        <p>Item não encontrado. Por favor, digite novamente.</p>
+          <p>Item não encontrado. Por favor, digite novamente.</p>
         </div>
         <div class="card-wrapper" id="cardWrapper">
           <div class="card-item">
-          <img src="images/casaco.png" alt="Feminino">
+            <img src="images/casaco.png" alt="Feminino">
             <div class="card-content">
               <h3>Casaco Cinza</h3>
-              <p>Casaco tamanho P, bem conservado de pelinhos sinteticos.</p>
-              <button type="butoon">Quero esse!</button>
-            </div>
-          </div>
-          <div class="card-item">
-            <img src="images/saia florida.png" alt="Feminino">
-              <div class="card-content">
-                <h3>Saia Florida</h3>
-                <p>Saia florida, tamanho G, medidas a consultar.</p>
-                <button type="butoon">Quero esse!</button>
-            </div>
-          </div>
-          <div class="card-item">
-            <img src="images/camisa amarela.png" alt="Feminino">
-                <div class="card-content">
-                  <h3>Camisa Amarela</h3>
-                  <p>Camisa de manga amarela com detalhes brancos.</p>
-                  <button type="butoon">Quero esse!</button>
-            </div>
-          </div>
-          <div class="card-item">
-            <img src="images/calça cargo.png" alt="Feminino">
-                  <div class="card-content">
-                    <h3>Calça Cargo</h3>
-                    <p>Calça cargo cintura alta, tamanho 36, estilo flare.</p>
-                    <button type="butoon">Quero esse!</button>
+              <p>50,00</p>
+              <p>Casaco tamanho P, bem conservado de pelinhos sintéticos.</p>
+              <button type="button" data-price="50.00">Quero esse!</button>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script src="script.js"></script>
-    </body>
-    </html>
+    <script src="js/script.js"></script>
+  </body>
+</html>

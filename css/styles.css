@@ -108,10 +108,11 @@ nav ul button:hover{
 }
 
 .header-block img{
-  width: 278px;
-  margin-left: 700px;
+  width: 250px;
   border-radius: 20px;
   position: absolute;
+  right: 1%;
+  bottom: 1%;
 }
 
 .header-block .text {
@@ -247,11 +248,14 @@ section .card-item{
   margin-top: 20px;
   margin-right: 8px; 
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .card-item button {
-  width: 80%;
-  padding: 15px 0px;
+  width: 250px;
+  max-width: 90%; 
+  height: 50px;
+  padding: 15px;
   border: 1px solid var(--yellow); 
   background: var(--yellow);
   border-radius: 4px;
@@ -260,10 +264,29 @@ section .card-item{
   font-size: 1.1em;
   cursor: pointer;
   transition: 0.3s ease;
-  margin-bottom: 10px;
 }
 
 .card-item button:hover {
   background: var(--black);
   color: var(--yellow);
+}
+
+@media (max-width: 983px) {
+  img.moca{
+    width: 0;
+    height: 0;
+  };
+}
+
+@media (max-width:693px) {
+  .header-block .text p{
+    text-align: center; 
+    font-size: 0;
+  }
+}
+@media (max-width:693px) {
+  .header-block .text h2{
+    text-align: center; 
+    font-size: 0
+  }
 }
