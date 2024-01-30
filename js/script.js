@@ -20,7 +20,10 @@ function adicionarAoCarrinho(nomeItem, precoItem) {
 
 function atualizarTextoCarrinho() {
   const carrinhoTotalSpan = document.getElementById('carrinhoTotal');
+  const carrinhoTotalSidebarSpan = document.getElementById('carrinhoTotalSidebar');
+
   carrinhoTotalSpan.textContent = `R$ ${carrinho.total.toFixed(2)}`;
+  carrinhoTotalSidebarSpan.textContent = `R$ ${carrinho.total.toFixed(2)}`;
 }
 
 function searchButton() {
@@ -58,8 +61,21 @@ queroEsseButtons.forEach(button => {
 });
 
 function exibirCarrinho() {
-  // Aqui você pode adicionar lógica para exibir o carrinho, se necessário
+  const menuSidebar = document.getElementById("menuSidebar");
+  menuSidebar.classList.add("show-menu");
+
+  atualizarTextoCarrinho();
+
+  // Restante do código para exibir o carrinho, se necessário
   console.log(carrinho);
+}
+
+function toggleMenu() {
+  var menuSidebar = document.getElementById("menuSidebar");
+  menuSidebar.classList.toggle("show-menu");
+
+  var menuIcon = document.querySelector(".menu-icon");
+  menuIcon.classList.toggle("close-icon");
 }
 
 document.addEventListener('DOMContentLoaded', function() {
