@@ -22,19 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 10px; /* Largura da barra de rolagem */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--yellow); 
-  border-radius: 4px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: none; /* Cor da "trilha" da barra de rolagem */
-}
-
 header {
   width: 100%;
   height: 500px;
@@ -88,7 +75,7 @@ nav ul li a:hover{
   color: var(--gray);
 }
 
-nav button{
+.cart-icon{
   color: var(--gray);
   border: 1px solid var(--yellow);
   background: transparent;
@@ -115,44 +102,28 @@ nav ul button:hover{
   box-shadow: 1px 0px 10px 0px rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 10;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
 }
 
 .header-block img{
-  width: 250px;
+  width: 25.4%;
   border-radius: 20px;
-  position: absolute;
-  right: 1%;
-  bottom: 1%;
-}
 
-.header-block .text {
-  position: absolute;
-  bottom: 20%;
-  left: 6%;
 }
 
 .header-block .text h2 {
-  max-width: 650px;
+  text-align: center;
   font-size: 32px;
   color: black;
-  margin-bottom: 1px;
-  text-align: left; 
-  transform: translateX(-20px);
-  transition: transform 0.7s;
 }
 
 .header-block .text p {
-  max-width: 650px;
+  text-align: center;
   font-size: 20px;
-  color: black;
-  margin-bottom: 60px;
-  margin-left: 5px;
-  text-align: left;
-  transform: translateX(-20px);
-  transition: transform 0.6s;
+  color: black; 
 }
 
 
@@ -228,36 +199,42 @@ section .card-wrapper{
 }
 
 section .card-item{
-  height: 450px;
-  max-width: 100%; /* ARRUMAR AQUI */
+  height: 440px;
   background: var(--black);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; 
-  justify-content: space-around;
+   
 }
 
-.card-item h3{
+.card-item h3 {
   color: white;
   width: 90%;
   margin: 12px;
+  left: -10px; /* Ou qualquer valor negativo desejado */
 }
 
-.card-item p {
+.Valor {
   width: 90%;
   font-style: italic;
   color: white;
-  margin-left: 4%;
+  text-align: right; /* Alinha o texto à direita */
+  padding-left: 20px; /* Adiciona espaço à esquerda */
   margin-bottom: 10px;
 }
-
+.Descrição {
+    width: 90%;
+    font-style: italic;
+    font-size: 16px;
+    color: white;
+    margin-left: 4%;
+    margin-bottom: 10px;  
+    text-align: center;
+}
 
 .card-item img{
-  width: 70%;
   max-width: 60%;
-  height: 55%;
   margin-top: 20px;
   margin-right: 8px; 
   border-radius: 8px;
@@ -266,10 +243,10 @@ section .card-item{
 
 .card-item button {
   width: 250px;
-  max-width: 90%; 
+  max-width: 90%;
   height: 50px;
   padding: 15px;
-  border: 1px solid var(--yellow); 
+  border: 1px solid var(--yellow);
   background: var(--yellow);
   border-radius: 4px;
   color: white;
@@ -277,6 +254,9 @@ section .card-item{
   font-size: 1.1em;
   cursor: pointer;
   transition: 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Certifique-se de que é um elemento de bloco para que as margens automáticas funcionem */
 }
 
 .card-item button:hover {
@@ -284,22 +264,150 @@ section .card-item{
   color: var(--yellow);
 }
 
-@media (max-width: 983px) {
-  img.moca{
-    width: 0;
-    height: 0;
-  };
+.menu-icon{
+    cursor: pointer;
+    display: none;
+    margin-right: 20px;
 }
 
-@media (max-width:693px) {
-  .header-block .text p{
-    text-align: center; 
+.bar {
+  width: 40px;
+  height: 6px;
+  background-color: white;
+  border-radius: 15%;
+  margin: 5px 0;
+}
+
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Inicialmente escondido */
+  width: 300px;
+  height: 100%;
+  background-color: #333;
+  padding-top: 80px;
+  transition: left 0.3s ease-in-out;
+}
+
+.menu-sidebar-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu-sidebar-list a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 15px;
+}
+.menu-icon {
+  cursor: pointer;
+  display: none;
+  margin-right: 20px;
+}
+
+.bar {
+  width: 40px;
+  height: 6px;
+  background-color: white;
+  border-radius: 15%;
+  margin: 5px 0;
+}
+
+/* Estilos do menu lateral */
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: black;
+  padding-top: 80px;
+  transition: left 0.3s ease-in-out;
+}
+
+.menu-sidebar-list {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu-sidebar-list a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Mostrar o menu */
+.menu-sidebar.show-menu {
+  left: 0;
+}
+
+.close-icon{
+  margin-left: 8%;
+}
+
+/* Transformar em um X */
+.menu-icon.close-icon div:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 9px);
+}
+
+.menu-icon.close-icon div:nth-child(2) {
+  transform: rotate(-45deg) ;
+}
+
+.menu-icon.close-icon div:nth-child(3) {
+  opacity: 0;
+}
+
+.card-content .price-text {
+  color: var(--yellow);
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.card-content .item-price {
+  font-size: 1.2em;
+  margin-right: 20px;
+}
+
+.card-content .item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card-content .item-info h3 {
+  color: white;
+  width: 70%; /* Ajuste a largura conforme necessário */
+  margin: 12px;
+  margin-left: 20px;
+  font-size: 1.4em;
+}
+
+.Valor {
+  font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
+  font-weight: bold;
+  color: var(--yellow);
+  text-align: right;
+  margin-bottom: 10px;
+}
+  
+@media (max-width:490px) {
+  .moca {
+    display: none;
+    text-align: 0; 
     font-size: 0;
   }
 }
-@media (max-width:693px) {
-  .header-block .text h2{
-    text-align: center; 
-    font-size: 0
+
+@media (max-width: 740px) {
+  header div nav ul{
+    display: none;
+  }
+  .menu-icon{
+    display: block;
   }
 }
